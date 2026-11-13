@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Luxe 5-Star Hotel</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Contact Specific CSS -->
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+    <!-- Loading Screen (from global script) -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>L U X E</h2>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="contact-hero-content ">
+            <span class="hero-subtitle">At Your Service</span>
+            <h1>Get In Touch</h1>
+            <p>Our dedicated team is here to assist you with every detail of your stay.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="section-padding contact-info-section bg-light">
+        <div class="container">
+            <div class="contact-cards-grid">
+                
+                <!-- Reservations -->
+                <div class="contact-card ">
+                    <div class="card-icon"><i class="fas fa-calendar-check"></i></div>
+                    <h3>Reservations</h3>
+                    <p>For room bookings, suite upgrades, and package inquiries.</p>
+                    <div class="card-details">
+                        <a href="tel:+18001234567">+1 (800) 123-4567</a>
+                        <a href="mailto:reservations@luxehotel.com">reservations@luxehotel.com</a>
+                    </div>
+                </div>
+
+                <!-- Concierge -->
+                <div class="contact-card ">
+                    <div class="card-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h3>Concierge</h3>
+                    <p>For dining reservations, transport, and personalized itineraries.</p>
+                    <div class="card-details">
+                        <a href="tel:+18001234568">+1 (800) 123-4568</a>
+                        <a href="mailto:concierge@luxehotel.com">concierge@luxehotel.com</a>
+                    </div>
+                </div>
+
+                <!-- Events & Weddings -->
+                <div class="contact-card ">
+                    <div class="card-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Events & Weddings</h3>
+                    <p>For corporate summits, banquets, and bespoke wedding planning.</p>
+                    <div class="card-details">
+                        <a href="tel:+18001234569">+1 (800) 123-4569</a>
+                        <a href="mailto:events@luxehotel.com">events@luxehotel.com</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Form & Location Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="contact-split-layout">
+                
+                <!-- Form Side -->
+                <div class="form-side ">
+                    <div class="section-title">
+                        <span class="subtitle">Send a Message</span>
+                        <h2>How Can We Assist You?</h2>
+                    </div>
+                    
+                    <form id="premium-contact-form" class="premium-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" required placeholder="John">
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" required placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="emailAddr">Email Address</label>
+                                <input type="email" id="emailAddr" required placeholder="john@example.com">
+                            </div>
+                            <div class="input-group">
+                                <label for="phoneNum">Phone Number (Optional)</label>
+                                <input type="tel" id="phoneNum" placeholder="+1 (555) 000-0000">
+                            </div>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="department">Department</label>
+                            <div class="select-wrapper">
+                                <select id="department" required>
+                                    <option value="" disabled selected>Select a Department</option>
+                                    <option value="reservations">Room Reservations</option>
+                                    <option value="dining">Dining & Restaurants</option>
+                                    <option value="spa">Spa & Wellness</option>
+                                    <option value="events">Weddings & Events</option>
+                                    <option value="feedback">Guest Feedback</option>
+                                    <option value="other">Other Inquiry</option>
+                                </select>
+                                <i class="fas fa-chevron-down select-icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="input-group full-width">
+                            <label for="userMessage">Your Message</label>
+                            <textarea id="userMessage" rows="5" required placeholder="Please provide details about your inquiry..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-100 form-submit-btn">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Location Side -->
+                <div class="location-side ">
+                    <div class="location-card">
+                        <h3>Luxe Hotel & Resort</h3>
+                        <p class="address"><i class="fas fa-map-marker-alt gold-text"></i> 123 Luxury Avenue, Beverly Hills<br>California 90210, United States</p>
+                        
+                        <div class="arrival-info">
+                            <h4><i class="fas fa-plane-arrival"></i> Arrival Information</h4>
+                            <p><strong>Check-in:</strong> 3:00 PM</p>
+                            <p><strong>Check-out:</strong> 11:00 AM</p>
+                            <p>Complimentary valet parking is available for all registered guests.</p>
+                        </div>
+
+                        <div class="map-wrapper">
+                            <!-- Google Maps Embed -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.301540939223!2d-118.40263658478796!3d34.08740528059635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1655000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <div class="social-connect mt-2">
+                            <h4>Connect With Us</h4>
+                            <div class="social-links-contact">
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create memories that last a lifetime.</p>
+                    
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text" style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    <!-- Contact Specific JS -->
+    <script src="js/contact.js"></script>
+</body>
+</html>

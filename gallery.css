@@ -1,0 +1,372 @@
+/* gallery.css - Styles specific to the Gallery Page */
+
+/* ==========================================================================
+   Gallery Hero Section
+   ========================================================================== */
+.gallery-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.35)), url('https://images.unsplash.com/photo-1542314831-c6a4d27160c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.gallery-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(15,23,42,0.8), rgba(15,23,42,0.4));
+}
+
+.gallery-hero-decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 85%;
+    height: 85%;
+    transform: translate(-50%, -50%);
+    background: url('https://images.unsplash.com/photo-1521464301836-1b3de4994b3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    opacity: 0.18;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 1;
+}
+
+.gallery-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-subtitle {
+    display: block;
+    color: var(--gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.gallery-hero-content h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.gallery-hero-content p {
+    color: var(--gray-light);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Filter Buttons
+   ========================================================================== */
+.filter-section {
+    padding: 25px 0;
+    border-bottom: 1px solid var(--gray-mid);
+}
+
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.gallery-filter-btn {
+    background: transparent;
+    border: none;
+    padding: 8px 15px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-light);
+    cursor: pointer;
+    position: relative;
+    transition: var(--transition);
+}
+
+.gallery-filter-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.gallery-filter-btn:hover,
+.gallery-filter-btn.active {
+    color: var(--primary-dark);
+}
+
+.gallery-filter-btn.active::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   Masonry Grid Layout
+   ========================================================================== */
+.gallery-main-section {
+    background-color: var(--white);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+    grid-auto-flow: dense; /* Helps fill empty spaces in masonry */
+}
+
+/* Variation Classes for Masonry Look */
+.gallery-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.gallery-card.tall {
+    grid-row: span 2;
+}
+
+.gallery-card.wide {
+    grid-column: span 2;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+/* Hover Overlay with Description */
+.card-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.5) 60%, rgba(15,23,42,0.2) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover {
+    box-shadow: var(--shadow-lg);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.08);
+}
+
+.gallery-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-text {
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.gallery-card:hover .card-text {
+    transform: translateY(0);
+}
+
+.card-text h3 {
+    color: var(--gold);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+}
+
+.card-text p {
+    color: var(--white);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.expand-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px; height: 40px;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-card:hover .expand-icon {
+    transform: scale(1);
+}
+
+.expand-icon:hover {
+    background: var(--gold);
+    color: var(--primary-dark);
+}
+
+/* ==========================================================================
+   Interactive Lightbox (Full Screen Modal)
+   ========================================================================== */
+.gallery-lightbox {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.98);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.gallery-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px; right: 40px;
+    color: var(--white);
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 10001;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--gold);
+}
+
+.lightbox-content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1400px;
+    height: 85vh;
+}
+
+.lightbox-nav {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 20px;
+    transition: color 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    color: var(--gold);
+}
+
+.lightbox-image-container {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image-container img {
+    max-width: 100%;
+    max-height: 80%; /* Leave room for caption */
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.95); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-caption {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.lightbox-caption h3 {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.lightbox-caption p {
+    color: var(--white);
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .gallery-card.wide {
+        grid-column: span 2;
+    }
+    .lightbox-nav { font-size: 2rem; padding: 10px; }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-card.wide {
+        grid-column: span 1;
+    }
+    .gallery-card.tall {
+        grid-row: span 1;
+        height: 350px;
+    }
+    .gallery-hero-content h1 { font-size: 2.5rem; }
+    
+    .lightbox-content-wrapper {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .lightbox-image-container {
+        width: 100%;
+        height: 70%;
+    }
+    .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10002;
+    }
+    .lightbox-nav.prev { left: 0; }
+    .lightbox-nav.next { right: 0; }
+    .lightbox-caption p { font-size: 0.9rem; }
+}

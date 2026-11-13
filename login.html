@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register | Luxe 5-Star Hotel</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Login Specific CSS -->
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- Loading Screen (from global script) -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>L U X E</h2>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn gold-text"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Full Screen Login Section -->
+    <section class="login-section">
+        <div class="login-overlay"></div>
+        
+        <div class="container login-container ">
+            <div class="login-glass-box">
+                
+                <!-- Left Side: Welcome Text -->
+                <div class="login-welcome">
+                    <i class="fas fa-crown"></i>
+                    <h2>Welcome to Luxe</h2>
+                    <p>Log in to access your exclusive member benefits, view upcoming reservations, and manage your luxury profile.</p>
+                    <div class="member-perks">
+                        <span><i class="fas fa-check-circle"></i> Priority Upgrades</span>
+                        <span><i class="fas fa-check-circle"></i> Late Checkout</span>
+                        <span><i class="fas fa-check-circle"></i> Exclusive Rates</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Forms -->
+                <div class="login-forms-wrapper">
+                    
+                    <!-- Form Tabs -->
+                    <div class="form-tabs">
+                        <button class="tab-btn active" data-target="sign-in-form">Sign In</button>
+                        <button class="tab-btn" data-target="register-form">Create Account</button>
+                    </div>
+
+                    <!-- 1. Sign In Form -->
+                    <form id="sign-in-form" class="auth-form active">
+                        <div class="input-group">
+                            <label for="login-email">Email Address</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-envelope icon"></i>
+                                <input type="email" id="login-email" required placeholder="Enter your email">
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="login-password">Password</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-lock icon"></i>
+                                <input type="password" id="login-password" required placeholder="Enter your password">
+                                <i class="fas fa-eye toggle-password" data-target="login-password"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-options">
+                            <label class="remember-me">
+                                <input type="checkbox"> 
+                                <span class="checkmark"></span>
+                                Remember me
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-100 form-submit-btn">
+                            <span>Sign In</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+
+                    <!-- 2. Register Form -->
+                    <form id="register-form" class="auth-form">
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label for="reg-fname">First Name</label>
+                                <input type="text" id="reg-fname" required placeholder="John">
+                            </div>
+                            <div class="input-group">
+                                <label for="reg-lname">Last Name</label>
+                                <input type="text" id="reg-lname" required placeholder="Doe">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-email">Email Address</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-envelope icon"></i>
+                                <input type="email" id="reg-email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="reg-password">Create Password</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-lock icon"></i>
+                                <input type="password" id="reg-password" required placeholder="Minimum 8 characters">
+                                <i class="fas fa-eye toggle-password" data-target="reg-password"></i>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-gold w-100 form-submit-btn">
+                            <span>Create Account</span>
+                            <i class="fas fa-user-plus"></i>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create memories that last a lifetime.</p>
+                    
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text" style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    <!-- Login Specific JS -->
+    <script src="js/login.js"></script>
+</body>
+</html>

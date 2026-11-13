@@ -1,0 +1,696 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe | 5-Star Premium Hotel & Resort</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>L U X E</h2>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="images/exterior.webp" alt="Luxury Hotel Exterior" loading="lazy">
+                <div class="slide-content">
+                    <h4 >Welcome to Paradigm of Luxury</h4>
+                    <h1>Experience The Ultimate Elegance</h1>
+                    <p>Discover a world of unsurpassed comfort and impeccable service.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Luxury Suite" loading="lazy">
+                <div class="slide-content">
+                    <h4>Exclusive Suites</h4>
+                    <h1>Redefining Your Comfort Zone</h1>
+                    <p>Unwind in our meticulously designed presidential suites.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Fine Dining" loading="lazy">
+                <div class="slide-content">
+                    <h4>Gastronomic Excellence</h4>
+                    <h1>A Culinary Journey Awaits</h1>
+                    <p>Savor world-class cuisines prepared by Michelin-starred chefs.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Carousel Controls -->
+        <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+        <!-- Floating Booking Form (Glassmorphism) -->
+        <div class="booking-container glass " id="booking-form">
+            <form class="booking-form" id="main-booking-form">
+                <div class="input-group">
+                    <label>Check-in</label>
+                    <input type="date" required id="check-in">
+                </div>
+                <div class="input-group">
+                    <label>Check-out</label>
+                    <input type="date" required id="check-out">
+                </div>
+                <div class="input-group">
+                    <label>Adults</label>
+                    <select required>
+                        <option value="1">1 Adult</option>
+                        <option value="2" selected>2 Adults</option>
+                        <option value="3">3 Adults</option>
+                        <option value="4">4 Adults</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Children</label>
+                    <select>
+                        <option value="0">0 Children</option>
+                        <option value="1">1 Child</option>
+                        <option value="2">2 Children</option>
+                    </select>
+                </div>
+                <div class="input-group btn-group">
+                    <button type="submit" class="btn btn-gold w-100">Check Availability</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text ">
+                    <div class="section-title">
+                        <span class="subtitle">About Luxe</span>
+                        <h2>A Legacy of Luxury and Exquisite Hospitality</h2>
+                    </div>
+                    <p>Since 1995, Luxe Hotel has been the epitome of luxury and sophisticated hospitality. Nestled in the heart of the city, we offer a serene escape from the urban hustle while keeping you connected to the vibrant culture.</p>
+                    <p>Our commitment to excellence is reflected in every detail, from our bespoke furnishings to our intuitive, personalized service. We don't just provide a place to stay; we craft unforgettable experiences tailored to your desires.</p>
+                    
+                    <div class="signature">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Signature_of_John_Hancock.svg" alt="CEO Signature" class="filter-gold" loading="lazy">
+                        <p>Alexander Sterling, General Manager</p>
+                    </div>
+                    
+                    <a href="rooms.html" class="btn btn-outline-gold mt-2">Discover Our Rooms</a>
+                </div>
+                <div class="about-images ">
+                    <div class="img-wrapper img-1">
+                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Lobby" loading="lazy">
+                    </div>
+                    <div class="img-wrapper img-2">
+                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa" loading="lazy">
+                    </div>
+                    <div class="experience-badge glass-dark">
+                        <span class="years">25+</span>
+                        <span class="text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury Rooms Section -->
+    <section id="rooms" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Our Accommodations</span>
+                <h2>Elegant Suites & Rooms</h2>
+            </div>
+            
+            <div class="rooms-grid">
+                <!-- Room 1 -->
+                <div class="room-card ">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deluxe Room" loading="lazy">
+                        <div class="price-tag glass">From $350/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Deluxe Ocean View</h3>
+                        <p>Spacious room featuring modern luxury, a king-size bed, and panoramic ocean views.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-bath"></i> Bathtub</span>
+                            <span><i class="fas fa-wifi"></i> Free Wifi</span>
+                            <span><i class="fas fa-tv"></i> 55" TV</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="room-card ">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Suite" loading="lazy">
+                        <div class="price-tag glass">From $550/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Executive Suite</h3>
+                        <p>Perfect for business or leisure, featuring a separate living area and exclusive lounge access.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-couch"></i> Living Area</span>
+                            <span><i class="fas fa-glass-martini-alt"></i> Minibar</span>
+                            <span><i class="fas fa-concierge-bell"></i> Service</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="room-card ">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presidential Suite" loading="lazy">
+                        <div class="price-tag glass">From $1200/night</div>
+                        <div class="badge">Signature</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Presidential Suite</h3>
+                        <p>The pinnacle of luxury. Expansive layout, private terrace, and 24/7 dedicated butler service.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                            <span><i class="fas fa-wine-bottle"></i> Bar</span>
+                            <span><i class="fas fa-user-tie"></i> Butler</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Our Services</span>
+                <h2>World-Class Facilities</h2>
+            </div>
+            
+            <div class="facilities-grid">
+                <div class="facility-card ">
+                    <div class="icon"><i class="fas fa-swimming-pool"></i></div>
+                    <h3>Infinity Pool</h3>
+                    <p>Temperature-controlled rooftop pool with stunning city skyline views.</p>
+                </div>
+                <div class="facility-card ">
+                    <div class="icon"><i class="fas fa-spa"></i></div>
+                    <h3>Holistic Spa</h3>
+                    <p>Rejuvenate your body and mind with our signature massage therapies.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="icon"><i class="fas fa-dumbbell"></i></div>
+                    <h3>Fitness Center</h3>
+                    <p>State-of-the-art equipment available 24/7 with personal trainers.</p>
+                </div>
+                <div class="facility-card">
+                    <div class="icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Fine Dining</h3>
+                    <p>Multiple award-winning restaurants serving global cuisines.</p>
+                </div>
+                <div class="facility-card ">
+                    <div class="icon"><i class="fas fa-car"></i></div>
+                    <h3>Chauffeur Service</h3>
+                    <p>Luxury fleet available for airport transfers and city tours.</p>
+                </div>
+                <div class="facility-card ">
+                    <div class="icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3>Event Spaces</h3>
+                    <p>Grand ballrooms and meeting rooms for your special occasions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dining Section -->
+    <section id="dining" class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="dining-layout">
+                <div class="dining-image">
+                    <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Gourmet Food" loading="lazy">
+                    <div class="dining-float-img glass">
+                        <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Cocktails" loading="lazy">
+                    </div>
+                </div>
+                <div class="dining-text ">
+                    <div class="section-title">
+                        <span class="subtitle">Culinary Experience</span>
+                        <h2 class="text-white">Taste the Perfection</h2>
+                    </div>
+                    <p>Embark on a gastronomic adventure at our signature restaurants. Led by Chef Marco Rossi, our culinary team sources the finest seasonal ingredients to create dishes that are as visually stunning as they are delicious.</p>
+                    
+                    <ul class="dining-list">
+                        <li>
+                            <i class="fas fa-check-circle gold-text"></i>
+                            <div>
+                                <h4>Le Jardin Royal</h4>
+                                <p>Authentic French fine dining in an elegant setting.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle gold-text"></i>
+                            <div>
+                                <h4>Azure Lounge</h4>
+                                <p>Rooftop bar serving artisan cocktails and tapas.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle gold-text"></i>
+                            <div>
+                                <h4>The Brasserie</h4>
+                                <p>All-day international buffet with live cooking stations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="btn btn-gold mt-2">Reserve a Table</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Exclusive Deals</span>
+                <h2>Special Packages</h2>
+            </div>
+            
+            <div class="offers-grid">
+                <div class="offer-card ">
+                    <img src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Romantic Getaway" loading="lazy">
+                    <div class="offer-content">
+                        <div class="discount-badge">-20%</div>
+                        <h3>Romantic Getaway</h3>
+                        <p>Enjoy a couples massage, romantic dinner, and late check-out.</p>
+                        <a href="#" class="btn btn-outline-dark">Claim Offer</a>
+                    </div>
+                </div>
+                <div class="offer-card ">
+                    <img src="https://images.unsplash.com/photo-1506012787146-f92b2d7d6d96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Trip" loading="lazy">
+                    <div class="offer-content">
+                        <div class="discount-badge">Perks</div>
+                        <h3>Corporate Retreat</h3>
+                        <p>Includes high-speed wifi, meeting room access, and dry cleaning.</p>
+                        <a href="#" class="btn btn-outline-dark">Claim Offer</a>
+                    </div>
+                </div>
+                <div class="offer-card ">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Spa Package" loading="lazy">
+                    <div class="offer-content">
+                        <div class="discount-badge">-15%</div>
+                        <h3>Wellness Weekend</h3>
+                        <p>Unlimited spa access, detox meals, and yoga sessions included.</p>
+                        <a href="#" class="btn btn-outline-dark">Claim Offer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="subtitle">Visual Tour</span>
+                <h2>Photo Gallery</h2>
+            </div>
+            
+            <!-- Gallery Filters -->
+            <div class="gallery-filters ">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="rooms">Rooms</button>
+                <button class="filter-btn" data-filter="dining">Dining</button>
+                <button class="filter-btn" data-filter="spa">Spa & Pool</button>
+            </div>
+            
+            <!-- Masonry Grid -->
+            <div class="gallery-grid ">
+                <div class="gallery-item rooms">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Room Interior" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item spa">
+                    <img src="images/swimming.webp" alt="Swimming Pool" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item dining">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Restaurant Dish" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item rooms">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bathroom" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item dining">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Restaurant Interior" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item spa">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spa Treatment" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-controls">
+            <button class="lb-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lb-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <section id="stats" class="stats-section bg-dark text-white">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item ">
+                    <i class="fas fa-door-open"></i>
+                    <h2 class="counter" data-target="350">0</h2>
+                    <p>Luxury Rooms</p>
+                </div>
+                <div class="stat-item ">
+                    <i class="fas fa-users"></i>
+                    <h2 class="counter" data-target="15000">0</h2>
+                    <p>Happy Guests</p>
+                </div>
+                <div class="stat-item ">
+                    <i class="fas fa-award"></i>
+                    <h2 class="counter" data-target="45">0</h2>
+                    <p>Awards Won</p>
+                </div>
+                <div class="stat-item ">
+                    <i class="fas fa-star"></i>
+                    <h2><span class="counter" data-target="5">0</span>-Star</h2>
+                    <p>Premium Rating</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Guest Reviews</span>
+                <h2>What Our Clients Say</h2>
+            </div>
+            
+            <div class="testimonial-slider ">
+                <div class="testi-track">
+                    <div class="testi-slide active">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="review-text">"Absolutely phenomenal experience. The attention to detail, the culinary masterpieces, and the warmth of the staff made our anniversary unforgettable. We will definitely be returning."</p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Reviewer 1">
+                            <div>
+                                <h4>Sarah Jenkins</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testi-slide">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="review-text">"The presidential suite exceeded all expectations. The private butler service was impeccable. Luxe Hotel sets a new standard for luxury hospitality."</p>
+                        <div class="reviewer">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Reviewer 2">
+                            <div>
+                                <h4>Michael Chang</h4>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-light">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-text ">
+                    <div class="section-title">
+                        <span class="subtitle">Questions</span>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                    <p>Find answers to common questions about your stay at Luxe Hotel. If you need further assistance, please don't hesitate to contact our 24/7 concierge service.</p>
+                </div>
+                <div class="faq-accordion ">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            What are the check-in and check-out times?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Check-in time is at 3:00 PM, and check-out is at 11:00 AM. Early check-in and late check-out can be arranged subject to availability and may incur additional charges.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Is airport transportation provided?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Yes, we offer luxury chauffeur service to and from the international airport. Please provide your flight details to our concierge at least 24 hours in advance to arrange pick-up.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Are pets allowed in the hotel?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>We welcome small dogs (under 15 lbs) in specific pet-friendly rooms. A non-refundable pet fee applies. Please contact reservations prior to booking.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            Is there a dress code for the restaurants?
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="accordion-body">
+                            <p>Our fine dining restaurant, Le Jardin Royal, requires smart casual attire (no shorts or flip-flops). The Brasserie and Azure Lounge have a casual dress code.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Get In Touch</span>
+                <h2>Contact & Location</h2>
+            </div>
+            
+            <div class="contact-layout">
+                <div class="contact-info ">
+                    <div class="info-box">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Luxury Avenue, Beverly Hills, CA 90210, USA</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (800) 123-4567<br>+1 (800) 123-4568</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>reservations@luxehotel.com<br>concierge@luxehotel.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links mt-2">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper ">
+                    <form id="contact-form" class="contact-form">
+                        <div class="input-row">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <input type="text" id="subject" placeholder="Subject" required>
+                        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-gold w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Google Maps iframe -->
+            <div class="map-container ">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3304.301540939223!2d-118.40263658478796!3d34.08740528059635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA%2090210!5e0!3m2!1sen!2sus!4v1655000000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create memories that last a lifetime.</p>
+                    
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text" style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>

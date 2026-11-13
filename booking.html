@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Stay | Luxe 5-Star Hotel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Booking Specific CSS -->
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body class="bg-light">
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>L U X E</h2>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="room.html">Rooms</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Hero Section -->
+    <section class="booking-hero">
+        <div class="booking-hero-overlay"></div>
+        <div class="booking-hero-content ">
+            <h1>Complete Your Reservation</h1>
+            <p>Select your dates and perfect sanctuary.</p>
+        </div>
+    </section>
+
+    <!-- Main Booking Engine -->
+    <section class="section-padding booking-section">
+        <div class="container">
+
+            <!-- Horizontal Search Bar -->
+            <div class="booking-search-bar ">
+                <div class="search-group">
+                    <label>Check-in</label>
+                    <input type="date" id="book-checkin" required>
+                </div>
+                <div class="search-group">
+                    <label>Check-out</label>
+                    <input type="date" id="book-checkout" required>
+                </div>
+                <div class="search-group">
+                    <label>Guests</label>
+                    <select id="book-guests">
+                        <option value="1">1 Adult</option>
+                        <option value="2" selected>2 Adults</option>
+                        <option value="3">2 Adults, 1 Child</option>
+                        <option value="4">2 Adults, 2 Children</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label>Promo Code</label>
+                    <input type="text" id="book-promo" placeholder="Optional">
+                </div>
+                <button class="btn btn-gold update-btn" id="update-search-btn">Update Search</button>
+            </div>
+
+            <!-- Booking Layout (Two Columns) -->
+            <div class="booking-layout mt-4">
+
+                <!-- Left Column: Room Listings -->
+                <div class="room-listings ">
+
+                    <!-- Room 1 -->
+                    <div class="room-listing-card" data-room="deluxe" data-price="350" data-name="Deluxe Ocean View">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Deluxe Ocean View">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Deluxe Ocean View</h3>
+                                <div class="room-list-price">
+                                    <span class="currency">$</span><span class="amount">350</span> / night
+                                </div>
+                            </div>
+                            <p class="room-desc">Spacious 450 sq ft room featuring modern luxury, a king-size bed, and
+                                panoramic floor-to-ceiling ocean views.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-bath"></i> Marble Bath</span>
+                                <span><i class="fas fa-wifi"></i> Fast WiFi</span>
+                                <span><i class="fas fa-coffee"></i> Nespresso</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 2 -->
+                    <div class="room-listing-card" data-room="executive" data-price="550" data-name="Executive Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Executive Suite">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Executive Suite</h3>
+                                <div class="room-list-price">
+                                    <span class="currency">$</span><span class="amount">550</span> / night
+                                </div>
+                            </div>
+                            <p class="room-desc">A lavish 700 sq ft suite perfect for business or leisure, featuring a
+                                separate living area and exclusive club lounge access.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-couch"></i> Lounge Area</span>
+                                <span><i class="fas fa-glass-martini-alt"></i> Minibar</span>
+                                <span><i class="fas fa-concierge-bell"></i> Club Access</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 3 -->
+                    <div class="room-listing-card" data-room="presidential" data-price="1200"
+                        data-name="Presidential Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Presidential Suite">
+                            <div class="badge">Signature</div>
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Presidential Suite</h3>
+                                <div class="room-list-price">
+                                    <span class="currency">$</span><span class="amount">1,200</span> / night
+                                </div>
+                            </div>
+                            <p class="room-desc">The pinnacle of luxury. A magnificent 1,500 sq ft expansive layout with
+                                a private terrace, jacuzzi, and 24/7 dedicated butler service.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                                <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                                <span><i class="fas fa-wine-bottle"></i> Private Bar</span>
+                                <span><i class="fas fa-user-tie"></i> Butler</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+                    <!-- Room 4 -->
+                    <div class="room-listing-card" data-room="executive-loft" data-price="420"
+                        data-name="Executive Loft">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Executive Loft">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Executive Loft</h3>
+                                <div class="room-list-price">
+                                    <span class="currency">$</span><span class="amount">420</span> / night
+                                </div>
+                            </div>
+                            <p class="room-desc">A chic loft suite with cathedral ceilings, premium city views, and a
+                                private seating area for business or relaxation.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-wifi"></i> High-Speed WiFi</span>
+                                <span><i class="fas fa-tv"></i> Smart TV</span>
+                                <span><i class="fas fa-coffee"></i> In-Room Espresso</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 5 -->
+                    <div class="room-listing-card" data-room="garden-terrace" data-price="480"
+                        data-name="Garden Terrace">
+                        <div class="room-list-img">
+                            <img src="images/garden.jpg" alt="Garden Terrace Room">
+                            <div class="badge">New</div>
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Garden Terrace</h3>
+                                <div class="room-list-price">
+                                    <span class="currency">$</span><span class="amount">410</span> / night
+                                </div>
+                            </div>
+                            <p class="room-desc">A serene terrace suite with private outdoor access, lush garden views,
+                                and a luxurious soaking tub.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-tree"></i> Private Terrace</span>
+                                <span><i class="fas fa-bath"></i> Rain Shower</span>
+                                <span><i class="fas fa-wifi"></i> Fast WiFi</span>
+                                <span><i class="fas fa-wine-bottle"></i> Mini Bar</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 6 -->
+                    <div class="room-listing-card" data-room="junior-suite" data-price="480" data-name="Junior Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Junior Suite">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Junior Suite</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">480</span> / night</div>
+                            </div>
+                            <p class="room-desc">A spacious suite with a luxe sleeping area, separate lounge, and
+                                premium city-view comforts.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-couch"></i> Sitting Area</span>
+                                <span><i class="fas fa-wifi"></i> Fast WiFi</span>
+                                <span><i class="fas fa-wine-glass"></i> Welcome Drink</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 7 -->
+                    <div class="room-listing-card" data-room="grand-panoramic-suite" data-price="750"
+                        data-name="Grand Panoramic Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Grand Panoramic Suite">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Grand Panoramic Suite</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">750</span> / night</div>
+                            </div>
+                            <p class="room-desc">A corner suite with expansive panoramic views, luxurious finishes, and
+                                a private dining nook.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-binoculars"></i> Panoramic View</span>
+                                <span><i class="fas fa-bath"></i> Soaking Tub</span>
+                                <span><i class="fas fa-tv"></i> Smart TV</span>
+                                <span><i class="fas fa-concierge-bell"></i> Premium Service</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 8 -->
+                    <div class="room-listing-card" data-room="wellness-spa-suite" data-price="820"
+                        data-name="Wellness Spa Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Wellness Spa Suite">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Wellness Spa Suite</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">820</span> / night</div>
+                            </div>
+                            <p class="room-desc">Relax and recharge in a suite with in-room spa amenities, a deep
+                                soaking tub, and organic comforts.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-hot-tub"></i> In-room Spa</span>
+                                <span><i class="fas fa-spa"></i> Wellness Amenities</span>
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-leaf"></i> Organic Toiletries</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 9 -->
+                    <div class="room-listing-card" data-room="royal-penthouse" data-price="1500"
+                        data-name="Royal Penthouse">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Royal Penthouse">
+                            <div class="badge">Penthouse</div>
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Royal Penthouse</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">2,800</span> / night</div>
+                            </div>
+                            <p class="room-desc">An elite top-floor suite with private terrace, champagne service, and
+                                sweeping skyline views.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-crown"></i> Private Terrace</span>
+                                <span><i class="fas fa-wine-bottle"></i> Champagne Service</span>
+                                <span><i class="fas fa-concierge-bell"></i> Butler Service</span>
+                                <span><i class="fas fa-tv"></i> Home Theater</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 10-->
+                    <div class="room-listing-card" data-room="double-deluxe-room" data-price="390"
+                        data-name="Double Deluxe Room">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Double Deluxe Room">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Double Deluxe Room</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">360</span> / night</div>
+                            </div>
+                            <p class="room-desc">Perfect for couples or friends, this room features two luxurious beds,
+                                modern design, and abundant comfort.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-bed"></i> 2 Queen Beds</span>
+                                <span><i class="fas fa-bath"></i> Spa Bath</span>
+                                <span><i class="fas fa-wifi"></i> Fast WiFi</span>
+                                <span><i class="fas fa-coffee"></i> In-Room Coffee</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 11 -->
+                    <div class="room-listing-card" data-room="family-heritage-suite" data-price="680"
+                        data-name="Family Heritage Suite">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Family Heritage Suite">
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Family Heritage Suite</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">650</span> / night</div>
+                            </div>
+                            <p class="room-desc">A grand family suite with multiple sleeping areas, a spacious lounge,
+                                and elegant classic styling.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-users"></i> Family Layout</span>
+                                <span><i class="fas fa-couch"></i> Living Area</span>
+                                <span><i class="fas fa-bath"></i> Dual Bathrooms</span>
+                                <span><i class="fas fa-utensils"></i> Dining Space</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+                    <!-- Room 12 -->
+                    <div class="room-listing-card" data-room="oceanfront-villa" data-price="980"
+                        data-name="Oceanfront Villa">
+                        <div class="room-list-img">
+                            <img src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                alt="Oceanfront Villa">
+                            <div class="badge">Villa</div>
+                        </div>
+                        <div class="room-list-content">
+                            <div class="room-list-header">
+                                <h3>Oceanfront Villa</h3>
+                                <div class="room-list-price"><span class="currency">$</span><span
+                                        class="amount">1,800</span> / night</div>
+                            </div>
+                            <p class="room-desc">An exclusive beachfront villa with private pool access, direct ocean
+                                views, and luxury villa amenities.</p>
+                            <div class="room-amenities-list">
+                                <span><i class="fas fa-water"></i> Private Pool</span>
+                                <span><i class="fas fa-umbrella-beach"></i> Beach Access</span>
+                                <span><i class="fas fa-bed"></i> King Bed</span>
+                                <span><i class="fas fa-concierge-bell"></i> Villa Host</span>
+                            </div>
+                            <button class="btn btn-outline-gold select-room-btn w-100">Select Room</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- Right Column: Sticky Summary -->
+                <div class="booking-summary-wrapper ">
+                    <div class="booking-summary-card">
+                        <h3>Your Stay</h3>
+
+                        <div class="summary-dates">
+                            <div class="date-box">
+                                <span class="label">Check-in</span>
+                                <strong id="summary-checkin">Select Date</strong>
+                                <span class="time">After 3:00 PM</span>
+                            </div>
+                            <div class="date-arrow"><i class="fas fa-arrow-right"></i></div>
+                            <div class="date-box">
+                                <span class="label">Check-out</span>
+                                <strong id="summary-checkout">Select Date</strong>
+                                <span class="time">Before 11:00 AM</span>
+                            </div>
+                        </div>
+
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Guests</span>
+                                <strong id="summary-guests">2 Adults</strong>
+                            </div>
+                            <div class="summary-row">
+                                <span>Duration</span>
+                                <strong id="summary-nights">0 Nights</strong>
+                            </div>
+                            <div class="summary-row room-selection-row">
+                                <span>Selected Room</span>
+                                <strong id="summary-room" class="gold-text">None Selected</strong>
+                            </div>
+                        </div>
+
+                        <div class="summary-pricing">
+                            <div class="pricing-row">
+                                <span>Room Rate</span>
+                                <span id="summary-rate">$0.00</span>
+                            </div>
+                            <div class="pricing-row">
+                                <span>Taxes & Fees (15%)</span>
+                                <span id="summary-tax">$0.00</span>
+                            </div>
+                            <div class="pricing-row total">
+                                <span>Total Price</span>
+                                <span id="summary-total" class="gold-text">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- User Details Form (Hidden until room is selected) -->
+                        <form id="checkout-form" class="checkout-form mt-2" style="display: none;">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                            <input type="tel" placeholder="Phone Number" required>
+                            <button type="submit" class="btn btn-gold w-100 mt-1" id="confirm-booking-btn">Confirm
+                                Reservation</button>
+                        </form>
+
+                        <div id="select-prompt" class="select-prompt text-center mt-2">
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Please select a room and dates to
+                                proceed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create
+                        memories that last a lifetime.</p>
+
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text"
+                                style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i>
+                            +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    <!-- Booking Specific JS -->
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

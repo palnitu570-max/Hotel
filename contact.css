@@ -1,0 +1,316 @@
+/* contact.css - Styles specific to the Contact Page */
+
+/* ==========================================================================
+   Contact Hero Section
+   ========================================================================== */
+.contact-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    background: url('https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to right, rgba(15,23,42,0.85), rgba(15,23,42,0.6));
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.hero-subtitle {
+    display: block;
+    color: var(--gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.contact-hero-content h1 {
+    color: var(--white);
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+}
+
+.contact-hero-content p {
+    color: var(--gray-light);
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Department Contact Cards
+   ========================================================================== */
+.contact-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: -80px; /* Pulls cards up over the hero slightly */
+    position: relative;
+    z-index: 5;
+}
+
+.contact-card {
+    background: var(--white);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    transition: var(--transition);
+    border-bottom: 3px solid transparent;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 3px solid var(--gold);
+}
+
+.card-icon {
+    width: 70px; height: 70px;
+    background: var(--gray-light);
+    color: var(--gold);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-card:hover .card-icon {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.contact-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-details a {
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card-details a:hover {
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   Split Layout (Form & Location)
+   ========================================================================== */
+.contact-split-layout {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* Form takes more space than map */
+    gap: 4rem;
+}
+
+/* -----------------------------
+   Premium Form Styling
+------------------------------ */
+.premium-form {
+    background: var(--white);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group.full-width {
+    margin-bottom: 30px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.premium-form input,
+.premium-form textarea,
+.premium-form select {
+    width: 100%;
+    padding: 15px 20px;
+    background: var(--gray-light);
+    border: 1px solid var(--gray-mid);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    transition: var(--transition);
+    outline: none;
+}
+
+/* Select wrapper for custom arrow */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.select-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    pointer-events: none;
+}
+
+.premium-form input:focus,
+.premium-form textarea:focus,
+.premium-form select:focus {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+}
+
+.form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px;
+    font-size: 1.1rem;
+}
+
+/* -----------------------------
+   Location Card Styling
+------------------------------ */
+.location-card {
+    background: var(--primary-darker);
+    color: var(--white);
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-lg);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.location-card h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.location-card .address {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--gray-light);
+}
+
+.arrival-info {
+    margin-bottom: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+}
+
+.arrival-info h4 {
+    color: var(--white);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrival-info p {
+    color: var(--gray-mid);
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(212,175,55,0.3);
+}
+
+.social-connect h4 {
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.social-links-contact {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links-contact a {
+    width: 40px; height: 40px;
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links-contact a:hover {
+    background: var(--gold);
+    transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .contact-split-layout { gap: 2rem; }
+}
+
+@media (max-width: 992px) {
+    .contact-cards-grid { grid-template-columns: 1fr; margin-top: 0; padding-top: 2rem; }
+    .contact-split-layout { grid-template-columns: 1fr; gap: 4rem; }
+    .location-side { order: -1; } /* Puts map on top of form on mobile */
+}
+
+@media (max-width: 768px) {
+    .contact-hero-content h1 { font-size: 2.8rem; }
+    .input-row { grid-template-columns: 1fr; gap: 0; }
+    .location-card { padding: 2rem; }
+}

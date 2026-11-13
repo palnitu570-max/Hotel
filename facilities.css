@@ -1,0 +1,343 @@
+/* facilities.css - Specific styles for the Facilities Page */
+
+/* ==========================================================================
+   Facilities Hero Section
+   ========================================================================== */
+.facilities-hero {
+    position: relative;
+    height: 55vh;
+    min-height: 450px;
+    background: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.facilities-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.facilities-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 800px;
+}
+
+.hero-subtitle {
+    display: block;
+    color: var(--gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.facilities-hero-content h1 {
+    color: var(--white);
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+}
+
+.facilities-hero-content p {
+    color: var(--gray-mid);
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Zig-Zag Facility Showcases
+   ========================================================================== */
+.facility-showcase {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 6rem;
+}
+
+.facility-showcase:last-child {
+    margin-bottom: 0;
+}
+
+.facility-img {
+    flex: 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.facility-img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.facility-showcase:hover .facility-img img {
+    transform: scale(1.05);
+}
+
+/* Adding a decorative gold frame behind images */
+.facility-img::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    bottom: -20px;
+    left: 20px;
+    right: -20px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    z-index: -1;
+    transition: var(--transition);
+}
+
+.facility-showcase.reverse .facility-img::before {
+    left: -20px;
+    right: 20px;
+}
+
+.facility-content {
+    flex: 1;
+}
+
+.facility-content h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.facility-content p {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.facility-features {
+    margin-bottom: 2rem;
+}
+
+.facility-features li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    color: var(--primary-dark);
+    font-weight: 500;
+}
+
+.facility-features i {
+    color: var(--gold);
+}
+
+/* ==========================================================================
+   Interactive Tabs for Event Spaces
+   ========================================================================== */
+.tabs-container {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 30px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.tab-btn:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: var(--gold);
+}
+
+.tab-btn.active {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.tab-content-area {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 500px;
+    background: var(--primary-darker);
+}
+
+.tab-pane {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.tab-pane.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.tab-pane img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.tab-info {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: calc(100% - 60px);
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.tab-info h3 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.tab-info p {
+    color: var(--gray-light);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.tab-info .capacity {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Bespoke Services Grid
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: var(--gray-light);
+    color: var(--gold);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.service-card:hover .service-icon {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Responsive Layout
+   ========================================================================== */
+@media (max-width: 992px) {
+    .facility-showcase {
+        gap: 2rem;
+    }
+    
+    .facility-img img {
+        height: 350px;
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .facilities-hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    /* Convert Zig-Zag to stacked vertical */
+    .facility-showcase {
+        flex-direction: column;
+        margin-bottom: 4rem;
+    }
+    
+    .facility-showcase.reverse {
+        flex-direction: column;
+    }
+    
+    /* Ensure image is always on top on mobile */
+    .facility-showcase .facility-img {
+        order: -1;
+        width: 100%;
+    }
+    
+    .facility-img::before {
+        display: none; /* Hide gold frame on mobile for cleaner look */
+    }
+    
+    .tab-content-area {
+        height: 400px;
+    }
+    
+    .tab-info {
+        bottom: 15px; left: 15px;
+        width: calc(100% - 30px);
+        padding: 1.5rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,281 @@
+/* dining.css - Styles for the Culinary & Dining Page */
+
+/* ==========================================================================
+   Dining Hero Section
+   ========================================================================== */
+.dining-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    background: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.dining-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.7);
+}
+
+.dining-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    max-width: 800px;
+    animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-subtitle {
+    display: block;
+    color: var(--gold);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.dining-hero-content h1 {
+    color: var(--white);
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.dining-hero-content p {
+    color: var(--gray-mid);
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   Restaurant Cards
+   ========================================================================== */
+.restaurant-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.rest-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.rest-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-10px);
+}
+
+.rest-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.rest-content {
+    padding: 2rem;
+}
+
+.rest-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+}
+
+.rest-type {
+    color: var(--gold);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.rest-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Global Food Showcase Grid (The Core Request)
+   ========================================================================== */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    gap: 1.5rem;
+}
+
+.food-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 300px;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.food-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* Make a couple of items span 2 rows/columns for a masonry look */
+.food-item:nth-child(1),
+.food-item:nth-child(8) {
+    grid-column: span 2;
+}
+
+.food-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.4) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    opacity: 0.9;
+    transition: var(--transition);
+}
+
+.food-item:hover img {
+    transform: scale(1.1);
+}
+
+.food-item:hover .food-overlay {
+    background: linear-gradient(to top, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0.8) 100%);
+    opacity: 1;
+}
+
+.food-info {
+    color: var(--white);
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.food-item:hover .food-info {
+    transform: translateY(0);
+}
+
+.country-tag {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--white);
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.food-info h4 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.food-info p {
+    font-size: 0.85rem;
+    color: var(--gray-mid);
+    line-height: 1.5;
+    opacity: 0;
+    max-height: 0;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+}
+
+.food-item:hover .food-info p {
+    opacity: 1;
+    max-height: 100px; /* Expands on hover */
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   Reservation Section
+   ========================================================================== */
+.reservation-section {
+    background-image: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+    background-position: center;
+    background-size: cover;
+}
+
+.res-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.res-text p {
+    color: var(--gray-mid);
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.contact-block p {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.contact-block i {
+    margin-right: 10px;
+}
+
+.res-form-wrapper {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.res-form-wrapper select,
+.res-form-wrapper input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--font-body);
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .food-grid { grid-template-columns: repeat(3, 1fr); }
+    .food-item:nth-child(1), .food-item:nth-child(8) { grid-column: span 1; }
+}
+
+@media (max-width: 992px) {
+    .restaurant-cards { grid-template-columns: 1fr; }
+    .res-container { grid-template-columns: 1fr; gap: 3rem; }
+    .food-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .dining-hero-content h1 { font-size: 2.8rem; }
+    .food-grid { grid-template-columns: 1fr; }
+    .input-row { grid-template-columns: 1fr; gap: 0; }
+    .food-item:hover .food-info p { max-height: none; }
+}

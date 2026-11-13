@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accommodations | Luxe 5-Star Hotel</title>
+
+    <!-- Google Fonts (This fixes the basic text issue) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Specific premium touches for the Rooms Page */
+    html, body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        min-height: 100%;
+    }
+    .section-padding.bg-light {
+    background: linear-gradient(rgba(10, 18, 38, 0.85), rgba(10, 18, 38, 0.85)),
+        url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
+        center/cover no-repeat;
+    padding: 80px 0;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    gap: 2rem;
+    grid-auto-rows: 1fr;
+    align-items: stretch;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 1080px) {
+    .rooms-grid {
+        grid-template-columns: repeat(2, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .rooms-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+    .rooms-page-hero {
+        background-attachment: scroll;
+    }
+        .rooms-page-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: url('https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            background-attachment: scroll;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .rooms-page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3));
+        }
+
+        .rooms-hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--white);
+        }
+
+        .rooms-hero-content h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Filter Menu Styling */
+        .room-filters {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+            border-bottom: 1px solid var(--gray-mid);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .room-filter-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 5px 10px;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .room-filter-btn.active,
+        .room-filter-btn:hover {
+            color: var(--gold);
+        }
+
+        .room-filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -17px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .room-filter-btn.active::after {
+            width: 100%;
+        }
+
+        .room-card-wrapper {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        /* --- Modal (Pop-up) Styles --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999; /* Sits on top of everything, even the navbar */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+            backdrop-filter: blur(5px); /* Premium blur effect */
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto; /* Centers it vertically and horizontally */
+            width: 90%;
+            max-width: 900px;
+            border-radius: 12px;
+            position: relative;
+            animation: slideDown 0.4s ease-out;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        /* Slide-in animation */
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .close-modal {
+            color: #333;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--gold); /* Changes to your gold color when hovered */
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
+
+        .modal-info {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .modal-price {
+            color: var(--gold);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .modal-amenities-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-amenities-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .modal-grid {
+                grid-template-columns: 1fr;
+            }
+            .modal-image img {
+                height: 250px;
+                min-height: 250px;
+            }
+            .modal-content {
+                margin: 10% auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="room.html" class="active">Rooms</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rooms Hero Section -->
+    <section class="rooms-page-hero">
+        <div class="rooms-hero-content ">
+            <span class="subtitle" style="color: var(--gold); letter-spacing: 4px; text-transform: uppercase;">Your
+                Personal Sanctuary</span>
+            <h1>Accommodations</h1>
+            <p style="font-size: 1.2rem; font-weight: 300;">Discover uncompromised luxury, breathtaking views, and
+                bespoke elegance.</p>
+        </div>
+    </section>
+
+    <!-- Room Grid & Filters -->
+    <section class="section-padding bg-light">
+        <div class="container">
+
+            <!-- Filters -->
+            <div class="room-filters ">
+                <button class="room-filter-btn active" data-filter="all">All Rooms</button>
+                <button class="room-filter-btn" data-filter="guest">Guest Rooms</button>
+                <button class="room-filter-btn" data-filter="suite">Luxury Suites</button>
+                <button class="room-filter-btn" data-filter="signature">Signature Collection</button>
+            </div>
+
+            <!-- Rooms Grid (Reusing your premium room cards from style.css) -->
+            <div class="rooms-grid" id="rooms-container">
+
+                <!-- Guest Room 1 -->
+                <div class="room-card room-card-wrapper " data-category="guest">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Deluxe Room">
+                        <div class="price-tag glass">From $350/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Deluxe Ocean View</h3>
+                        <p>Spacious room featuring modern luxury, a king-size bed, and panoramic ocean views.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-bath"></i> Bathtub</span>
+                            <span><i class="fas fa-wifi"></i> Free Wifi</span>
+                            <span><i class="fas fa-tv"></i> 55" TV</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suite 1 -->
+                <div class="room-card room-card-wrapper " data-category="suite">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Executive Suite">
+                        <div class="price-tag glass">From $550/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Executive Suite</h3>
+                        <p>Perfect for business or leisure, featuring a separate living area and exclusive lounge
+                            access.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-couch"></i> Living Area</span>
+                            <span><i class="fas fa-glass-martini-alt"></i> Minibar</span>
+                            <span><i class="fas fa-concierge-bell"></i> Service</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signature Room 1 -->
+                <div class="room-card room-card-wrapper " data-category="signature">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Presidential Suite">
+                        <div class="price-tag glass">From $1200/night</div>
+                        <div class="badge"
+                            style="position:absolute; top:15px; right:15px; background:var(--gold); color:white; padding:5px 12px; border-radius:4px; font-size:0.8rem; text-transform:uppercase;">
+                            Signature</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Presidential Suite</h3>
+                        <p>The pinnacle of luxury. Expansive layout, private terrace, and 24/7 dedicated butler service.
+                        </p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                            <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                            <span><i class="fas fa-wine-bottle"></i> Bar</span>
+                            <span><i class="fas fa-user-tie"></i> Butler</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Room 4: Guest Room -->
+                <div class="room-card room-card-wrapper " data-category="guest">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Premium City View">
+                        <div class="price-tag glass">From $380/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Premium City View</h3>
+                        <p>Watch the city come alive from the comfort of your king-size bed with floor-to-ceiling
+                            skyline views.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-city"></i> City View</span>
+                            <span><i class="fas fa-wifi"></i> Free Wifi</span>
+                            <span><i class="fas fa-coffee"></i> Nespresso</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 5: Guest Room -->
+                <div class="room-card room-card-wrapper " data-category="guest">
+                    <div class="room-img">
+                        <img src="images/garden.jpg"
+                            alt="Garden Terrace Room">
+                        <div class="price-tag glass">From $410/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Garden Terrace Room</h3>
+                        <p>A tranquil escape located on the ground floor, featuring a private landscaped terrace and
+                            outdoor seating.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> Queen Bed</span>
+                            <span><i class="fas fa-leaf"></i> Private Terrace</span>
+                            <span><i class="fas fa-bath"></i> Rain Shower</span>
+                            <span><i class="fas fa-tv"></i> Smart TV</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 6: Suite -->
+                <div class="room-card room-card-wrapper " data-category="suite">
+                    <div class="room-img">
+                        <img src="images/junior.jpg" alt="Junior Suite">
+                        <div class="price-tag glass">From $480/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Junior Suite</h3>
+                        <p>An oversized open-plan suite offering a seamless blend of a plush sleeping area and a
+                            comfortable living space.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-couch"></i> Sitting Area</span>
+                            <span><i class="fas fa-wine-glass"></i> Welcome Wine</span>
+                            <span><i class="fas fa-concierge-bell"></i> Service</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 7: Suite -->
+                <div class="room-card room-card-wrapper " data-category="suite">
+                    <div class="room-img">
+                        <img src="images/grand.jpg" alt="Grand Panoramic Suite">
+                        <div class="price-tag glass">From $750/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Grand Panoramic Suite</h3>
+                        <p>A sweeping corner suite wrapped in glass, offering 270-degree views of the ocean and the
+                            surrounding skyline.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-binoculars"></i> 270° Views</span>
+                            <span><i class="fas fa-bath"></i> Soaking Tub</span>
+                            <span><i class="fas fa-utensils"></i> Dining Area</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 8: Suite -->
+                <div class="room-card room-card-wrapper " data-category="suite">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Wellness Spa Suite">
+                        <div class="price-tag glass">From $820/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Wellness Spa Suite</h3>
+                        <p>Designed for complete rejuvenation, featuring an in-room sauna, oversized marble bath, and
+                            organic amenities.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King Bed</span>
+                            <span><i class="fas fa-hot-tub"></i> In-room Sauna</span>
+                            <span><i class="fas fa-spa"></i> Spa Access</span>
+                            <span><i class="fas fa-leaf"></i> Organic Bar</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 9: Signature -->
+                <div class="room-card room-card-wrapper " data-category="signature">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="The Royal Penthouse">
+                        <div class="price-tag glass">From $2,800/night</div>
+                        <div class="badge"
+                            style="position:absolute; top:15px; right:15px; background:var(--gold); color:white; padding:5px 12px; border-radius:4px; font-size:0.8rem; text-transform:uppercase;">
+                            Signature</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>The Royal Penthouse</h3>
+                        <p>Our most exclusive residence. A multi-level masterpiece with a private rooftop pool and grand
+                            piano.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> 3 King Beds</span>
+                            <span><i class="fas fa-swimmer"></i> Private Pool</span>
+                            <span><i class="fas fa-music"></i> Grand Piano</span>
+                            <span><i class="fas fa-user-tie"></i> 24/7 Butler</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 10: Guest Room -->
+                <div class="room-card room-card-wrapper " data-category="guest">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Double Deluxe Room">
+                        <div class="price-tag glass">From $360/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Double Deluxe Room</h3>
+                        <p>Perfect for friends or small families, featuring two plush queen beds and luxurious modern
+                            amenities.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> 2 Queen Beds</span>
+                            <span><i class="fas fa-bath"></i> Dual Vanities</span>
+                            <span><i class="fas fa-wifi"></i> Free Wifi</span>
+                            <span><i class="fas fa-tv"></i> 55" TV</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 11: Suite -->
+                <div class="room-card room-card-wrapper" data-category="suite">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1618221118493-9cfa1a1c00da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Family Heritage Suite">
+                        <div class="price-tag glass">From $650/night</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Family Heritage Suite</h3>
+                        <p>Spacious, elegant, and practical. Includes a master bedroom and a connected room for children
+                            with board games.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> King & 2 Twins</span>
+                            <span><i class="fas fa-gamepad"></i> Kids Area</span>
+                            <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                            <span><i class="fas fa-concierge-bell"></i> Service</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 12: Signature -->
+                <div class="room-card room-card-wrapper " data-category="signature">
+                    <div class="room-img">
+                        <img src="https://images.unsplash.com/photo-1595576508898-0ad5c879a061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Oceanfront Villa">
+                        <div class="price-tag glass">From $1,800/night</div>
+                        <div class="badge"
+                            style="position:absolute; top:15px; right:15px; background:var(--gold); color:white; padding:5px 12px; border-radius:4px; font-size:0.8rem; text-transform:uppercase;">
+                            Signature</div>
+                    </div>
+                    <div class="room-content">
+                        <h3>Oceanfront Villa</h3>
+                        <p>A secluded paradise directly on the water, featuring private beach access, a fire pit, and a
+                            personal chef upon request.</p>
+                        <div class="room-amenities">
+                            <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                            <span><i class="fas fa-umbrella-beach"></i> Private Beach</span>
+                            <span><i class="fas fa-fire"></i> Fire Pit</span>
+                            <span><i class="fas fa-user-tie"></i> Butler</span>
+                        </div>
+                        <div class="room-footer">
+                            <a href="#" class="view-details">View Details <i class="fas fa-arrow-right"></i></a>
+                            <a href="booking.html" class="btn btn-gold btn-sm">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Room Details Modal -->
+    <div id="roomModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Room View">
+                </div>
+                <div class="modal-info">
+                    <h2>Premium Room Details</h2>
+                    <p class="modal-price">From $380 / night</p>
+                    <p>Experience uncompromised luxury. This room features floor-to-ceiling windows, premium bedding,
+                        and a lavish marble bathroom equipped with organic bath amenities.</p>
+
+                    <h4 style="margin-top: 15px; margin-bottom: 10px;">Exclusive Amenities</h4>
+                    <ul class="modal-amenities-list">
+                        <li><i class="fas fa-concierge-bell"></i> 24/7 Room Service</li>
+                        <li><i class="fas fa-wifi"></i> High-Speed Wi-Fi</li>
+                        <li><i class="fas fa-coffee"></i> Nespresso Machine</li>
+                        <li><i class="fas fa-bath"></i> Deep Soaking Tub</li>
+                    </ul>
+
+                    <a href="#" class="btn btn-gold" style="width: 100%; text-align: center; margin-top: 20px;">Book
+                        This Room</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create
+                        memories that last a lifetime.</p>
+
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text"
+                                style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i>
+                            +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+                            alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS for the Room Filters -->
+    <script src="js/script.js"></script>
+    <script>
+        // Specific Javascript to make the room filters work smoothly
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.room-filter-btn');
+            const roomCards = document.querySelectorAll('.room-card-wrapper');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    roomCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+
+                        if (filterValue === 'all' || filterValue === category) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.9)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 400); // Wait for transition to finish
+                        }
+                    });
+                });
+            });
+        });
+        /* ==========================================================================
+           Room Details Modal Logic
+           ========================================================================== */
+        const modal = document.getElementById("roomModal");
+        const closeModalBtn = document.querySelector(".close-modal");
+        const viewDetailsButtons = document.querySelectorAll(".view-details");
+
+        // 1. Open modal when clicking any 'View Details' button
+        viewDetailsButtons.forEach(button => {
+            button.addEventListener("click", function (e) {
+                e.preventDefault(); // Stops the page from jumping to the top
+                modal.style.display = "block";
+                // document.body.style.overflow = "hidden"; // Prevents scrolling the background page
+            });
+        });
+
+        // 2. Close modal when clicking the 'X'
+        closeModalBtn.addEventListener("click", function () {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto"; // Turns scrolling back on
+        });
+
+        // 3. Close modal when clicking anywhere on the dark background outside the box
+        window.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+/* booking.css - Specific styles for the Booking Page */
+
+/* ==========================================================================
+   Booking Hero Section
+   ========================================================================== */
+.booking-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 350px;
+    background: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 80px; 
+}
+
+.booking-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.75);
+}
+
+.booking-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.booking-hero-content h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.booking-hero-content p {
+    color: var(--gold);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* ==========================================================================
+   Booking Search Bar
+   ========================================================================== */
+.booking-search-bar {
+    background: var(--white);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-top: -60px; /* Pull up over hero */
+    position: relative;
+    z-index: 10;
+}
+
+.search-group {
+    flex: 1;
+}
+
+.search-group label {
+    display: block;
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.search-group input,
+.search-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray-mid);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-main);
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-group input:focus,
+.search-group select:focus {
+    border-color: var(--gold);
+}
+
+.update-btn {
+    padding: 13px 25px;
+    height: 47px;
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Booking Layout (Two Columns)
+   ========================================================================== */
+.booking-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* -----------------------------
+   Left Column: Room Cards
+------------------------------ */
+.room-listings {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.room-listing-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-light);
+    transition: var(--transition);
+}
+
+.room-listing-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.room-listing-card.selected {
+    border: 2px solid var(--gold);
+    box-shadow: var(--shadow-lg);
+}
+
+.room-list-img {
+    flex: 0 0 350px;
+    position: relative;
+}
+
+.room-list-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-list-img .badge {
+    position: absolute;
+    top: 15px; left: 15px;
+    background: var(--gold);
+    color: var(--white);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.room-list-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.room-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.room-list-header h3 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.room-list-price {
+    text-align: right;
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+.room-list-price .amount {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+    font-family: var(--font-heading);
+}
+
+.room-desc {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.room-amenities-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.room-amenities-list span {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.room-amenities-list i {
+    color: var(--gold);
+}
+
+.select-room-btn {
+    margin-top: auto;
+}
+
+/* -----------------------------
+   Right Column: Sticky Summary
+------------------------------ */
+.booking-summary-wrapper {
+    position: sticky;
+    top: 100px; /* Sticks below navbar */
+}
+
+.booking-summary-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    border-top: 4px solid var(--gold);
+}
+
+.booking-summary-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--gray-light);
+}
+
+/* Dates */
+.summary-dates {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--gray-light);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.date-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-box .label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 3px;
+}
+
+.date-box strong {
+    color: var(--primary-dark);
+    font-size: 0.95rem;
+}
+
+.date-box .time {
+    font-size: 0.75rem;
+    color: var(--gray-mid);
+}
+
+.date-arrow {
+    color: var(--gold);
+}
+
+/* Details */
+.summary-details {
+    margin-bottom: 1.5rem;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.room-selection-row {
+    padding-top: 12px;
+    border-top: 1px dashed var(--gray-mid);
+}
+
+/* Pricing */
+.summary-pricing {
+    background: var(--primary-darker);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: var(--gray-mid);
+}
+
+.pricing-row.total {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.pricing-row.total .gold-text {
+    font-size: 1.4rem;
+}
+
+/* Checkout Form */
+.checkout-form input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border: 1px solid var(--gray-mid);
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.checkout-form input:focus {
+    border-color: var(--gold);
+}
+body.bg-light {
+    background: linear-gradient(180deg, #f3f6fb 0%, #eef3f8 50%, #ffffff 100%);
+}
+
+.booking-section {
+    background: rgba(255, 218, 185, 0.555);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 32px 70px rgba(15, 23, 42, 0.12);
+}
+
+.room-listing-card,
+.booking-summary-card,
+.booking-search-bar {
+    background: rgba(255, 218, 185, 0.555);
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .booking-search-bar { flex-wrap: wrap; }
+    .search-group { flex: 1 1 calc(25% - 15px); }
+    .update-btn { flex: 1 1 100%; }
+    
+    .room-listing-card { flex-direction: column; }
+    .room-list-img { flex: auto; height: 250px; }
+}
+
+@media (max-width: 992px) {
+    .booking-layout { grid-template-columns: 1fr; }
+    .booking-summary-wrapper { position: relative; top: 0; order: -1; margin-bottom: 2rem; }
+}
+
+@media (max-width: 768px) {
+    .booking-hero-content h1 { font-size: 2.5rem; }
+    .search-group { flex: 1 1 100%; }
+    .summary-dates { flex-direction: column; gap: 15px; text-align: center; }
+    .date-arrow { transform: rotate(90deg); }
+}

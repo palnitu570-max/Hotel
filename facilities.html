@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities & Amenities | Luxe 5-Star Hotel</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Facilities Specific CSS -->
+    <link rel="stylesheet" href="css/facilities.css">
+</head>
+<body>
+    <!-- Loading Screen (from global script) -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>L U X E</h2>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-crown"></i> LUXE
+            </a>
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="facilities.html" class="active">Facilities</a></li>
+                    <li><a href="dining.html">Dining</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn"><i class="far fa-user"></i> Login</a>
+                <a href="booking.html" class="btn btn-gold">Book Now</a>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Facilities Hero Section -->
+    <section class="facilities-hero">
+        <div class="facilities-hero-overlay"></div>
+        <div class="facilities-hero-content">
+            <span class="hero-subtitle">Indulge & Unwind</span>
+            <h1>World-Class Amenities</h1>
+            <p>Elevate your stay with our meticulously curated wellness and recreation spaces.</p>
+        </div>
+    </section>
+
+    <!-- Main Facilities (Zig-Zag Layout) -->
+    <section class="section-padding">
+        <div class="container">
+            
+            <!-- Facility 1: Spa (Image Left, Text Right) -->
+            <div class="facility-showcase ">
+                <div class="facility-img">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Holistic Spa">
+                </div>
+                <div class="facility-content">
+                    <span class="subtitle">Rejuvenation</span>
+                    <h2>The Serenity Spa</h2>
+                    <p>Escape into a world of tranquility at our award-winning 10,000 sq ft holistic spa. Inspired by ancient wellness traditions, our expert therapists offer bespoke treatments designed to restore balance to your mind, body, and spirit.</p>
+                    <ul class="facility-features">
+                        <li><i class="fas fa-check"></i> 12 Private Treatment Rooms</li>
+                        <li><i class="fas fa-check"></i> Thermal Suites & Saunas</li>
+                        <li><i class="fas fa-check"></i> Couples Massage Villas</li>
+                        <li><i class="fas fa-check"></i> Organic Skincare Products</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-gold mt-1">View Spa Menu</a>
+                </div>
+            </div>
+
+            <!-- Facility 2: Pool (Text Left, Image Right) -->
+            <div class="facility-showcase reverse ">
+                <div class="facility-content">
+                    <span class="subtitle">Leisure</span>
+                    <h2>Rooftop Infinity Pool</h2>
+                    <p>Swim above the city skyline in our temperature-controlled infinity pool. Whether you want to swim morning laps or sip artisanal cocktails at sunset, the pool deck offers an unparalleled atmosphere of exclusive relaxation.</p>
+                    <ul class="facility-features">
+                        <li><i class="fas fa-check"></i> Private Cabanas with Service</li>
+                        <li><i class="fas fa-check"></i> Poolside Bar & Dining</li>
+                        <li><i class="fas fa-check"></i> Heated Jacuzzi Sections</li>
+                        <li><i class="fas fa-check"></i> Complimentary Sunscreen & Towels</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-gold mt-1">Reserve a Cabana</a>
+                </div>
+                <div class="facility-img">
+                    <img src="images/pool.jpg" alt="Rooftop Infinity Pool">
+                </div>
+            </div>
+
+            <!-- Facility 3: Fitness (Image Left, Text Right) -->
+            <div class="facility-showcase ">
+                <div class="facility-img">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Fitness Center">
+                </div>
+                <div class="facility-content">
+                    <span class="subtitle">Active Lifestyle</span>
+                    <h2>Elite Fitness Studio</h2>
+                    <p>Maintain your fitness regime in our state-of-the-art gymnasium. Outfitted with the latest Technogym equipment, free weights, and cardio machines, our 24-hour facility ensures you never miss a workout.</p>
+                    <ul class="facility-features">
+                        <li><i class="fas fa-check"></i> Available 24/7 with Keycard</li>
+                        <li><i class="fas fa-check"></i> Personal Training Sessions</li>
+                        <li><i class="fas fa-check"></i> Yoga & Pilates Studio</li>
+                        <li><i class="fas fa-check"></i> Complimentary Fresh Juices</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Interactive Event Spaces Section (Tabs) -->
+    <section class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">Gatherings & Celebrations</span>
+                <h2 class="text-white">Meetings & Event Spaces</h2>
+                <p style="color: var(--gray-mid); max-width: 600px; margin: 10px auto 0;">From lavish weddings to corporate summits, we provide the perfect backdrop for your most important moments.</p>
+            </div>
+
+            <div class="tabs-container ">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-target="grand-ballroom">Grand Ballroom</button>
+                    <button class="tab-btn" data-target="executive-boardroom">Executive Boardroom</button>
+                    <button class="tab-btn" data-target="outdoor-terrace">Outdoor Terrace</button>
+                </div>
+
+                <div class="tab-content-area">
+                    <!-- Tab 1 -->
+                    <div class="tab-pane active" id="grand-ballroom">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Grand Ballroom">
+                        <div class="tab-info glass-dark">
+                            <h3>The Grand Ballroom</h3>
+                            <p>A magnificent 5,000 sq ft pillarless space featuring crystal chandeliers and state-of-the-art acoustics. Perfect for gala dinners and grand weddings.</p>
+                            <div class="capacity"><i class="fas fa-users gold-text"></i> Capacity: 500 Guests</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab 2 -->
+                    <div class="tab-pane" id="executive-boardroom">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Executive Boardroom">
+                        <div class="tab-info glass-dark">
+                            <h3>Executive Boardroom</h3>
+                            <p>Equipped with seamless video conferencing technology, ergonomic leather seating, and high-speed secure networks for high-stakes meetings.</p>
+                            <div class="capacity"><i class="fas fa-users gold-text"></i> Capacity: 20 Guests</div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3 -->
+                    <div class="tab-pane" id="outdoor-terrace">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Outdoor Terrace">
+                        <div class="tab-info glass-dark">
+                            <h3>The Garden Terrace</h3>
+                            <p>An enchanting open-air venue surrounded by manicured greenery and gentle water features. Ideal for cocktail receptions and intimate twilight ceremonies.</p>
+                            <div class="capacity"><i class="fas fa-users gold-text"></i> Capacity: 150 Guests</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services Grid -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title text-center ">
+                <span class="subtitle">At Your Service</span>
+                <h2>Bespoke Services</h2>
+            </div>
+
+            <div class="services-grid mt-4">
+                <div class="service-card ">
+                    <div class="service-icon"><i class="fas fa-car-side"></i></div>
+                    <h4>Chauffeur & Valet</h4>
+                    <p>Luxury airport transfers and 24-hour valet parking.</p>
+                </div>
+                <div class="service-card ">
+                    <div class="service-icon"><i class="fas fa-concierge-bell"></i></div>
+                    <h4>Les Clefs d'Or Concierge</h4>
+                    <p>Exclusive access to city tours, theater tickets, and dining.</p>
+                </div>
+                <div class="service-card ">
+                    <div class="service-icon"><i class="fas fa-baby-carriage"></i></div>
+                    <h4>Childcare Services</h4>
+                    <p>Certified nannies and a dedicated kids' play lounge.</p>
+                </div>
+                <div class="service-card ">
+                    <div class="service-icon"><i class="fas fa-paw"></i></div>
+                    <h4>Pet Concierge</h4>
+                    <p>Gourmet pet menus, walking services, and plush bedding.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info (Newsletter Removed) -->
+                <div class="footer-col">
+                    <a href="index.html" class="logo footer-logo">
+                        <i class="fas fa-crown"></i> LUXE
+                    </a>
+                    <p class="mt-2">Experience the zenith of luxury and hospitality in the heart of the city. We create memories that last a lifetime.</p>
+                    
+                    <!-- Replaced Newsletter with elegant Contact Info -->
+                    <div class="footer-contact mt-2">
+                        <p style="margin-bottom: 8px;"><i class="fas fa-map-marker-alt gold-text" style="width: 20px;"></i> 123 Luxury Avenue, CA 90210</p>
+                        <p style="margin-bottom: 8px;"><i class="fas fa-phone-alt gold-text" style="width: 20px;"></i> +1 (800) 123-4567</p>
+                        <p><i class="fas fa-envelope gold-text" style="width: 20px;"></i> concierge@luxehotel.com</p>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="rooms.html">Our Rooms</a></li>
+                        <li><a href="dining.html">Restaurant & Bar</a></li>
+                        <li><a href="facilities.html">Spa & Wellness</a></li>
+                        <li><a href="gallery.html">Photo Gallery</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Legal & Policies -->
+                <div class="footer-col">
+                    <h4>Legal & Policies</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cancellation Policy</a></li>
+                        <li><a href="#">COVID-19 Safety</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Instagram / Social -->
+                <div class="footer-col instagram-widget">
+                    <h4>Social & Gallery</h4>
+                    <div class="insta-grid">
+                        <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 1" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 2" loading="lazy">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Insta 3" loading="lazy">
+                        <img src="images/pool.jpg" alt="Insta 4" loading="lazy">
+                    </div>
+                    <a href="#" class="mt-1 d-block gold-text">@luxehotel</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Luxe Hotel & Resort. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Global JS -->
+    <script src="js/script.js"></script>
+    <!-- Facilities Specific JS -->
+    <script src="js/facilities.js"></script>
+</body>
+</html>
